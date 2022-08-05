@@ -9,68 +9,36 @@ using com.mxgraph;
 using System.Text;
 using System.IO;
 using System.IO.Compression;
-using zlib;
 
 namespace Diyagram_Yönetim_Sistemi
 {
     public partial class Uygulama : System.Web.UI.Page
     {
-        public string filePath = @"D:\workspaces\visual_studio\Diyagram Yönetim Sistemi\Diyagram Yönetim Sistemi\Diagrams\d1Test.drawio";
+        public string filePath = @"D:\workspaces\github\Diagram-Management-System\Diyagram Yönetim Sistemi\Diagrams\d1Test.drawio";
         public string node = "mxfile/diagram";
-
-        //Get the diagram node from xml file
-        public string getNodeFromXml(string filePath, string node)
-        {
-            XmlDocument doc = new XmlDocument();
-            doc.Load(filePath);
-            XmlNode node_ = doc.SelectSingleNode(node);
-            return node_.InnerText;
-        }
-        public static void DecompressData(byte[] inData, out byte[] outData)
-        {
-            using (MemoryStream outMemoryStream = new MemoryStream())
-            using (ZOutputStream outZStream = new ZOutputStream(outMemoryStream))
-            using (Stream inMemoryStream = new MemoryStream(inData))
-            {
-                CopyStream(inMemoryStream, outZStream);
-                outZStream.finish();
-                outData = outMemoryStream.ToArray();
-            }
-        }
-        public static void CopyStream(Stream input, Stream output)
-        {
-            byte[] buffer = new byte[2000];
-            int len;
-            while ((len = input.Read(buffer, 0, 2000)) > 0)
-            {
-                output.Write(buffer, 0, len);
-            }
-            output.Flush();
-        }
 
         protected string xml;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
             string data = getNodeFromXml(filePath, node);
             byte[] decoded = Convert.FromBase64String(data);
+            string res;
             using (MemoryStream resultStream = new MemoryStream(decoded))
             {
                 using (DeflateStream compressionStream = new DeflateStream(resultStream, CompressionMode.Decompress))
                 {
                     byte[] outBuffer = new byte[2048];   // need an estimate here
                     int length = compressionStream.Read(outBuffer, 0, outBuffer.Length);
-                    Xml = Encoding.UTF8.GetString(outBuffer, 0, length);
+                    res = Encoding.UTF8.GetString(outBuffer, 0, length);
                 }
 
             }
-
-         
-
             
-            Xml = File.ReadAllText(@"D:\workspaces\visual_studio\Diyagram Yönetim Sistemi\Diyagram Yönetim Sistemi\Diagrams\d1Test.xml");
+            Xml = HttpUtility.UrlDecode(res);
+            //Xml = File.ReadAllText(@"D:\workspaces\visual_studio\Diyagram Yönetim Sistemi\Diyagram Yönetim Sistemi\Diagrams\d1Test.xml");
         }
+
         // Getter and setter for the XML variable.
         public string Xml
         {
@@ -78,21 +46,20 @@ namespace Diyagram_Yönetim_Sistemi
             set { xml = value; }
         }
 
+        //Get the node from xml file
+        public string getNodeFromXml(string filePath, string node)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(filePath);
+            XmlNode node_ = doc.SelectSingleNode(node);
+            return node_.InnerText;
+        }
+
         public static MemoryStream GenerateStreamFromString(string value)
         {
             return new MemoryStream(Encoding.UTF8.GetBytes(value));
         }
 
-        public void metot (byte[] xmlBytes )
-        {
-            using (MemoryStream memStream = new MemoryStream(100))
-            {
-                // Write the first string to the stream.
-                memStream.Write(xmlBytes, 0, xmlBytes.Length);
-
-               
-            }
-        }
     }
 }
 
@@ -112,6 +79,18 @@ var asd = Encoding.UTF8.GetString(
 
 var decompressor = new GZipStream(memDecoded, CompressionMode.Decompress);
 decompressor.CopyTo(memOut);
+
+
+        public void metot (byte[] xmlBytes )
+        {
+            using (MemoryStream memStream = new MemoryStream(100))
+            {
+                // Write the first string to the stream.
+                memStream.Write(xmlBytes, 0, xmlBytes.Length);
+
+               
+            }
+        }
 
 */
 
