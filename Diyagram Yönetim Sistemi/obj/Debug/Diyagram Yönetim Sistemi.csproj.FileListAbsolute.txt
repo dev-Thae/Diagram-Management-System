@@ -101,3 +101,4 @@ D:\workspaces\visual_studio\Diyagram Yönetim Sistemi\Diyagram Yönetim Sistemi\
 D:\workspaces\visual_studio\Diyagram Yönetim Sistemi\Diyagram Yönetim Sistemi\obj\Debug\Diyagram Yönetim Sistemi.csproj.CopyComplete
 D:\workspaces\visual_studio\Diyagram Yönetim Sistemi\Diyagram Yönetim Sistemi\obj\Debug\Diyagram Yönetim Sistemi.dll
 D:\workspaces\visual_studio\Diyagram Yönetim Sistemi\Diyagram Yönetim Sistemi\obj\Debug\Diyagram Yönetim Sistemi.pdb
+D:\workspaces\visual_studio\Diyagram Yönetim Sistemi\Diyagram Yönetim Sistemi\bin\zlib.net.dll
