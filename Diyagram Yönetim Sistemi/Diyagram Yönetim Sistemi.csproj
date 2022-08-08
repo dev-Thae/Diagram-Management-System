@@ -175,6 +175,7 @@
     <Content Include="Scripts\src\images\collapsed.gif" />
     <Content Include="Scripts\src\images\error.gif" />
     <Content Include="Scripts\src\images\expanded.gif" />
+    <Content Include="Scripts\src\images\grid.gif" />
     <Content Include="Scripts\src\images\maximize.gif" />
     <Content Include="Scripts\src\images\minimize.gif" />
     <Content Include="Scripts\src\images\normalize.gif" />
@@ -387,7 +388,7 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="drawio.cs" />
+    <Compile Include="DrawioFile.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

@@ -6,7 +6,7 @@
 	</script>
 	<script type="text/javascript" src="Scripts/src/js/mxClient.js"></script>
     <div id="graphContainer"
-        style="overflow: hidden; width: 322px; height: 289px; background: url('/mxgraph/javascript/examples/editors/images/grid.gif')">
+        style="overflow: hidden; background: url('Scripts/src/images/grid.gif')">
     </div>
     <button id="saveButton" type="button">Save</button>
     <script type="text/javascript">
@@ -14,7 +14,6 @@
         app.add_init(function (sender, args) {
             // Program starts here. Gets the DOM elements for the respective IDs so things can be
             // created and wired-up.
-            debugger;
             var graphContainer = $get('graphContainer');
             var saveButton = $get('saveButton');
 
@@ -49,7 +48,7 @@
                 // string which is replaced on the server-side using the expression below. The string
                 // is then parsed using mxUtils.parseXml on the client-side and the resulting DOM is
                 // passed to the decode method for reading the graph into the current graph model.
-                var doc = mxUtils.parseXml('<% = Xml %>');
+                var doc = mxUtils.parseXml('<% = xml %>');
                 console.log(doc.documentElement);
                 graphControl.decode(doc.documentElement);
             }

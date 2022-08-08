@@ -14,54 +14,42 @@ namespace Diyagram_Yönetim_Sistemi
 {
     public partial class Uygulama : System.Web.UI.Page
     {
-        public string filePath = @"D:\workspaces\github\Diagram-Management-System\Diyagram Yönetim Sistemi\Diagrams\d1Test.drawio";
-        public string node = "mxfile/diagram";
-
-        protected string xml;
+        protected string xml { get; set; }
+        protected DrawioFile drawioFile = DrawioFile.Instance;
+        protected string filePath = @"D:\workspaces\github\Diagram-Management-System\Diyagram Yönetim Sistemi\Diagrams\d1Test.drawio";
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string data = getNodeFromXml(filePath, node);
-            byte[] decoded = Convert.FromBase64String(data);
-            string res;
-            using (MemoryStream resultStream = new MemoryStream(decoded))
-            {
-                using (DeflateStream compressionStream = new DeflateStream(resultStream, CompressionMode.Decompress))
-                {
-                    byte[] outBuffer = new byte[2048];   // need an estimate here
-                    int length = compressionStream.Read(outBuffer, 0, outBuffer.Length);
-                    res = Encoding.UTF8.GetString(outBuffer, 0, length);
-                }
-
-            }
-            
-            Xml = HttpUtility.UrlDecode(res);
-            //Xml = File.ReadAllText(@"D:\workspaces\visual_studio\Diyagram Yönetim Sistemi\Diyagram Yönetim Sistemi\Diagrams\d1Test.xml");
+            printGraph();
         }
 
-        // Getter and setter for the XML variable.
-        public string Xml
-        {
-            get { return xml; }
-            set { xml = value; }
-        }
 
-        //Get the node from xml file
-        public string getNodeFromXml(string filePath, string node)
-        {
-            XmlDocument doc = new XmlDocument();
-            doc.Load(filePath);
-            XmlNode node_ = doc.SelectSingleNode(node);
-            return node_.InnerText;
-        }
 
-        public static MemoryStream GenerateStreamFromString(string value)
-        {
-            return new MemoryStream(Encoding.UTF8.GetBytes(value));
+        protected void printGraph(){
+            drawioFile.setFilePath(filePath);
+            drawioFile.getFileInfo();
+            xml = drawioFile.getXml();
         }
-
     }
 }
+
+/* USEFUL FUNCTIONS
+//Get the node from xml file
+public string getNodeFromXml(string filePath, string node)
+{
+    XmlDocument doc = new XmlDocument();
+    doc.Load(filePath);
+    XmlNode node_ = doc.SelectSingleNode(node);
+    return node_.InnerText;
+}
+*/
+
+/*
+public static MemoryStream GenerateStreamFromString(string value)
+{
+    return new MemoryStream(Encoding.UTF8.GetBytes(value));
+}
+*/
 
 /* solution with pako.js
  * data = atob(data);
@@ -71,6 +59,8 @@ namespace Diyagram_Yönetim_Sistemi
 
 /* THIS PART IS THE OLD CODES THAT NEVER USEFUL
  * 
+    //Xml = File.ReadAllText(@"D:\workspaces\visual_studio\Diyagram Yönetim Sistemi\Diyagram Yönetim Sistemi\Diagrams\d1Test.xml");
+
 var asd = Encoding.UTF8.GetString(
     Convert.FromBase64String(
         getNodeFromXml(filePath, node)
@@ -92,6 +82,22 @@ decompressor.CopyTo(memOut);
             }
         }
 
+*/
+
+/*
+string data = getNodeFromXml(filePath, node);
+byte[] decoded = Convert.FromBase64String(data);
+string res;
+using (MemoryStream resultStream = new MemoryStream(decoded))
+{
+    using (DeflateStream compressionStream = new DeflateStream(resultStream, CompressionMode.Decompress))
+    {
+        byte[] outBuffer = new byte[1048576];   // need an estimate here
+        int length = compressionStream.Read(outBuffer, 0, outBuffer.Length);
+        res = Encoding.UTF8.GetString(outBuffer, 0, length);
+    }
+}            
+xml = HttpUtility.UrlDecode(res);
 */
 
 /*
