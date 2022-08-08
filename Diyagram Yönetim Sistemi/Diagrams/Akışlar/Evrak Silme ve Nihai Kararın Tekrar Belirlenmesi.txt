@@ -1,0 +1,4 @@
+﻿Eğer Sanık Bazında Nihai Karar Kaydetme ekranında Karar Türü uygun bir tür seçilmemişse ve Kesinleşme Bilgisinin Kaydedilmesi ekranında karar kesinleştirme 
+yapılmışsa ve bu durumda tekrar karar türü değiştirilmek isteniyorsa Gelen/Giden Evrak --> Düzeltme İşlemleri --> Evrak Silme ekranından Kesinleşme Şerhi seçilerek silinmeldir. 
+Daha sonra Sanık Bazında Nihai Karar Kaydetme ekranından Sanık Suç Bilgisi tablosundan ilgili kişinin satırı seçilir ve sağ alttaki Sil butonuyla silinir. 
+Daha sonra tekrar karar türü seçilip kaydedilmelidir.

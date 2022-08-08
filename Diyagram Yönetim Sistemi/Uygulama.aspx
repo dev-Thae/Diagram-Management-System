@@ -5,6 +5,41 @@
 	    mxBasePath = '/Scripts/src/';
 	</script>
 	<script type="text/javascript" src="Scripts/src/js/mxClient.js"></script>
+
+    <h3>Diagrams Directories</h3>
+    <hr />
+    <asp:TreeView ID="TreeView" runat="server" ImageSet="WindowsHelp" OnSelectedNodeChanged="TreeView_SelectedNodeChanged">
+        <HoverNodeStyle Font-Underline="True" ForeColor="#6666AA" />
+        <NodeStyle Font-Names="Tahoma" Font-Size="8pt" ForeColor="Black" HorizontalPadding="5px"
+            NodeSpacing="0px" VerticalPadding="1px"></NodeStyle>
+        <ParentNodeStyle Font-Bold="False" />
+        <SelectedNodeStyle BackColor="#B5B5B5" Font-Underline="False" HorizontalPadding="0px" VerticalPadding="0px" />
+    </asp:TreeView>
+
+    
+    <div id="graphContainer"
+        style="overflow: hidden; background: url('Scripts/src/images/grid.gif')">
+    </div>
+    <script type="text/javascript">
+        function printGraph(sender, args) {
+            var graphContainer = $get('graphContainer');
+            if (!mxClient.isBrowserSupported())
+                mxUtils.error('Tarayıcı desteklenmiyor!', 200, false);
+            else {
+                var graphControl = $create(aspnet.GraphControl, null, null, null, graphContainer);
+                var doc = mxUtils.parseXml('<% = xml %>');
+                //console.log(doc.documentElement);
+                graphControl.decode(doc.documentElement);
+            }
+        }
+        var app = Sys.Application;
+        app.add_init();
+    </script>
+
+
+    <div>
+    </div>
+<!-- OLD MX GRAPH JS SCRIPT
     <div id="graphContainer"
         style="overflow: hidden; background: url('Scripts/src/images/grid.gif')">
     </div>
@@ -54,6 +89,8 @@
             }
         });
     </script>
-    <div>
-    </div>
+
+-->
 </asp:Content>
+
+
