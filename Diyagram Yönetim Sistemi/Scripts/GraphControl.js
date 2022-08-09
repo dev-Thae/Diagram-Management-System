@@ -1,4 +1,5 @@
-﻿/// <reference name="MicrosoftAjax.js"/>
+﻿/// <reference path="webforms/msajax/microsoftajax.js" />
+// <reference name="MicrosoftAjax.js"/>
 
 Type.registerNamespace("aspnet");
 

@@ -151,8 +151,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
-    <Content Include="Diagrams\d1Test..txt" />
-    <Content Include="Diagrams\d1Test.xml" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -327,7 +325,6 @@
     <Content Include="Scripts\src\js\view\mxSwimlaneManager.js" />
     <Content Include="Scripts\src\js\view\mxTemporaryCellStates.js" />
     <Content Include="Uygulama.aspx" />
-    <Content Include="Diagrams\d1Test.drawio" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -426,6 +423,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
+    <Folder Include="Diagrams\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
