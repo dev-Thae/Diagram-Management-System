@@ -14,7 +14,7 @@
     </asp:PlaceHolder>
 
     <webopt:bundlereference runat="server" path="~/Content/css" />
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/logo.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
 <body>
@@ -60,11 +60,11 @@
                 </div>
             </div>
         </div>
-        <div class="container body-content">
+        <div class="body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
-            <footer>
+            <footer class="container">
                 <p>&copy; <%: DateTime.Now.Year %> - Diyagram Yönetim Sistemi</p>
             </footer>
         </div>

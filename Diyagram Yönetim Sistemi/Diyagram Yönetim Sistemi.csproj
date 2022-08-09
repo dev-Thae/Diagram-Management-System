@@ -165,6 +165,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="logo.ico" />
+    <Content Include="old codes.txt" />
     <Content Include="Scripts\GraphControl.js" />
     <Content Include="Scripts\mxClient.js" />
     <Content Include="Scripts\mxClient.min.js" />
