@@ -99,7 +99,7 @@ namespace Diyagram_Yönetim_Sistemi
         {
             printGraph(TreeView.SelectedNode.Value);
             this.Page.ClientScript.RegisterStartupScript(this.GetType(), "printGraph", "app.add_init(printGraph())", true);
-            var doc = mxUtils.ParseXml(xml);
+            //var doc = mxUtils.ParseXml(xml);
         }
 
     }

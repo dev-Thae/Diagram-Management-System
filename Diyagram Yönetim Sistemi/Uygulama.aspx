@@ -5,7 +5,7 @@
 	<script type="text/javascript" src="Scripts/src/js/mxClient.js"></script>
 
     <div class="row">
-        <div class="col-lg-3 col-md-4">
+        <div class="col-lg-3 col-md-4" style="padding-left: 25px">
             <h3>Diagrams Directories</h3>
             <hr />
             <asp:TreeView ID="TreeView" runat="server" ImageSet="WindowsHelp" OnSelectedNodeChanged="TreeView_SelectedNodeChanged">
@@ -16,7 +16,7 @@
                 <SelectedNodeStyle BackColor="#B5B5B5" Font-Underline="False" HorizontalPadding="0px" VerticalPadding="0px" />
             </asp:TreeView>
         </div>
-        <div class="col-lg-9 col-md-8">
+        <div class="col-lg-9 col-md-8" style="padding-right: 25px;">
             <div id="graphContainer"
                 style="overflow: scroll; background: url('Scripts/src/images/grid.gif')">
             </div>
