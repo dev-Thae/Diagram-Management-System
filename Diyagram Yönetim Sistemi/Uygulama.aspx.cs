@@ -9,7 +9,7 @@ using com.mxgraph;
 using System.Text;
 using System.IO;
 using System.IO.Compression;
-using Aspose.Diagram;
+using System.Windows;
 
 
 namespace Diyagram_Yönetim_Sistemi

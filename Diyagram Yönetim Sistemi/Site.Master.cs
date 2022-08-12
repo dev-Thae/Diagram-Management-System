@@ -11,7 +11,23 @@ namespace Diyagram_Yönetim_Sistemi
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            switch (this.Page.Title)
+            {
+                case "Ana Sayfa":
+                    home.Attributes.Add("class", home.Attributes["class"] + " active");
+                    break;
+                case "Uygulama":
+                    app.Attributes.Add("class", app.Attributes["class"] + " active");
+                    break;
+                case "Hakkında":
+                    about.Attributes.Add("class", about.Attributes["class"] + " active");
+                    break;
+                case "İletişim":
+                    contact.Attributes.Add("class", contact.Attributes["class"] + " active");
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
