@@ -9,6 +9,8 @@ using com.mxgraph;
 using System.Text;
 using System.IO;
 using System.IO.Compression;
+using Aspose.Diagram;
+
 
 namespace Diyagram_Yönetim_Sistemi
 {
@@ -95,12 +97,37 @@ namespace Diyagram_Yönetim_Sistemi
             TreeView.CollapseAll();
         }
 
+
         protected void TreeView_SelectedNodeChanged(object sender, EventArgs e)
         {
             printGraph(TreeView.SelectedNode.Value);
             this.Page.ClientScript.RegisterStartupScript(this.GetType(), "printGraph", "app.add_init(printGraph())", true);
-            //var doc = mxUtils.ParseXml(xml);
         }
 
+
+
+
+        /*
+        // Parses the mxGraph XML file format
+        private void read(mxGraph graph, string filePath)
+        {
+            drawioFile.setFilePath(filePath);
+            drawioFile.getFileInfo();
+            var doc = mxUtils.ParseXml(drawioFile.getXml());
+            var root = req.getDocumentElement();
+            var dec = new mxCodec(root.ownerDocument);
+
+            dec.decode(root, graph.getModel());
+        }
+        private void printGraph(string filePath, bool none)
+        {
+            drawioFile.setFilePath(filePath);
+            drawioFile.getFileInfo();
+            XmlDocument doc = mxUtils.ParseXml(drawioFile.getXml());
+            var o = new mxCodec(doc).Decode(doc.DocumentElement);
+            
+        }
+
+        */
     }
 }

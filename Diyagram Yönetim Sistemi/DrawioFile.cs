@@ -51,9 +51,7 @@ namespace Diyagram_Yönetim_Sistemi
         }
 
         public void setFilePath(string path) { filePath = path; }
-        public string getFilePath(){
-            return filePath;
-        }
+        public string getFilePath() { return filePath; }
 
         public void setNode(string node) { this.node = node; }
         public string getNode() { return node; }

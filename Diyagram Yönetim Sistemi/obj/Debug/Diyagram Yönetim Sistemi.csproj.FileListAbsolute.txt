@@ -157,6 +157,7 @@ D:\workspaces\github\Diagram-Management-System\Diyagram Yönetim Sistemi\bin\ros
 D:\workspaces\github\Diagram-Management-System\Diyagram Yönetim Sistemi\bin\Antlr3.Runtime.dll
 D:\workspaces\github\Diagram-Management-System\Diyagram Yönetim Sistemi\bin\AspNet.ScriptManager.bootstrap.dll
 D:\workspaces\github\Diagram-Management-System\Diyagram Yönetim Sistemi\bin\AspNet.ScriptManager.jQuery.dll
+D:\workspaces\github\Diagram-Management-System\Diyagram Yönetim Sistemi\bin\Aspose.Diagram.dll
 D:\workspaces\github\Diagram-Management-System\Diyagram Yönetim Sistemi\bin\Microsoft.AspNet.FriendlyUrls.dll
 D:\workspaces\github\Diagram-Management-System\Diyagram Yönetim Sistemi\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
 D:\workspaces\github\Diagram-Management-System\Diyagram Yönetim Sistemi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
@@ -175,6 +176,7 @@ D:\workspaces\github\Diagram-Management-System\Diyagram Yönetim Sistemi\bin\Sys
 D:\workspaces\github\Diagram-Management-System\Diyagram Yönetim Sistemi\bin\System.Web.Webpages.dll
 D:\workspaces\github\Diagram-Management-System\Diyagram Yönetim Sistemi\bin\System.Web.Webpages.Razor.dll
 D:\workspaces\github\Diagram-Management-System\Diyagram Yönetim Sistemi\bin\WebGrease.dll
+D:\workspaces\github\Diagram-Management-System\Diyagram Yönetim Sistemi\bin\Aspose.Diagram.xml
 D:\workspaces\github\Diagram-Management-System\Diyagram Yönetim Sistemi\bin\System.Web.Optimization.xml
 D:\workspaces\github\Diagram-Management-System\Diyagram Yönetim Sistemi\bin\Newtonsoft.Json.xml
 D:\workspaces\github\Diagram-Management-System\Diyagram Yönetim Sistemi\bin\Antlr3.Runtime.pdb

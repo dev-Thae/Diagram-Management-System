@@ -39,7 +39,6 @@
         app.add_init();
     </script>
 
-
     <div>
     </div>
 </asp:Content>
