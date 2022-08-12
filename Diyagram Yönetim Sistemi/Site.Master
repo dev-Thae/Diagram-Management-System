@@ -54,7 +54,7 @@
                 </ul>
             </div>
         </nav>
-        <div class="body-content">
+        <div class="body-content p-3">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
