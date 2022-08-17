@@ -17,7 +17,7 @@
     <link href="~/logo.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
-<body>
+<body style="padding-top: 50px">
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>

@@ -11,6 +11,10 @@ namespace Diyagram_Yönetim_Sistemi
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            highlightCurrentPage(sender, e);
+        }
+
+        private void highlightCurrentPage(object sender, EventArgs e){
             switch (this.Page.Title)
             {
                 case "Ana Sayfa":

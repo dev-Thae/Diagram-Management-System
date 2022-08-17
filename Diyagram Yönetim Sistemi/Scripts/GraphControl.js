@@ -14,6 +14,14 @@ aspnet.GraphControl.prototype = {
         // Constructs a graph instance for the given element
         this._graph = new mxGraph(this.get_element());
 
+        // Enables HTML labels as wrapping is only available for those
+        this._graph.htmlLabels = true;
+
+        // Disables in-place editing for edges
+        this._graph.isCellEditable = function (cell) {
+            return !this.model.isEdge(cell);
+        };
+
         // Enables rubberband selection
         this._rubberband = new mxRubberband(this._graph);
     },

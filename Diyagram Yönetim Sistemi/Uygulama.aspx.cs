@@ -97,7 +97,6 @@ namespace Diyagram_Yönetim_Sistemi
             TreeView.CollapseAll();
         }
 
-
         protected void TreeView_SelectedNodeChanged(object sender, EventArgs e)
         {
             printGraph(TreeView.SelectedNode.Value);
@@ -107,8 +106,8 @@ namespace Diyagram_Yönetim_Sistemi
 
 
 
-        /*
         // Parses the mxGraph XML file format
+        /*
         private void read(mxGraph graph, string filePath)
         {
             drawioFile.setFilePath(filePath);
@@ -119,15 +118,17 @@ namespace Diyagram_Yönetim_Sistemi
 
             dec.decode(root, graph.getModel());
         }
+        */
+        /*
         private void printGraph(string filePath, bool none)
         {
             drawioFile.setFilePath(filePath);
             drawioFile.getFileInfo();
+            mxGraph graph = new mxGraph(graphContainer);
             XmlDocument doc = mxUtils.ParseXml(drawioFile.getXml());
-            var o = new mxCodec(doc).Decode(doc.DocumentElement);
-            
+            var enc = new mxCodec(doc.DocumentElement.OwnerDocument);
+            enc.Decode(doc, graph.Model);
         }
-
         */
     }
 }
