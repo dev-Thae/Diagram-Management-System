@@ -571,7 +571,9 @@ else
 // Adds all required stylesheets and namespaces
 if (mxLoadStylesheets)
 {
-	mxClient.link('stylesheet', mxClient.basePath + '/css/common.css');
+	//mxClient.link('stylesheet', mxClient.basePath + '/css/common.css');	// default path
+	mxClient.link('stylesheet', mxClient.basePath + '/../mxgraph/src/css/common.css');	//client-side path
+	//mxClient.link('stylesheet', '../../src/css/common.css');	// server-side path
 }
 
 /**
