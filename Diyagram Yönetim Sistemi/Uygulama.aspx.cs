@@ -14,6 +14,16 @@ using System.Windows;
 
 namespace Diyagram_Yönetim_Sistemi
 {
+    public static class StringExtension
+    {
+        public static string GetLast(this string source, int tail_length)
+        {
+            if (tail_length >= source.Length)
+                return source;
+            return source.Substring(source.Length - tail_length);
+        }
+    }
+
     public partial class Uygulama : System.Web.UI.Page
     {
         protected string xml { get; set; }
@@ -24,7 +34,7 @@ namespace Diyagram_Yönetim_Sistemi
         {
             if (!this.IsPostBack){
                 DirectoryInfo rootInfo = new DirectoryInfo(@"D:\workspaces\github\Diagram-Management-System\Diyagram Yönetim Sistemi\Diagrams\");
-                this.PopulateRacistTreeView(rootInfo, null);
+                this.PopulateRacistTreeView(rootInfo, null, ".drawio", ".dygrm");
             }
         }
 
@@ -67,7 +77,7 @@ namespace Diyagram_Yönetim_Sistemi
             TreeView.CollapseAll();
         }
 
-        private void PopulateRacistTreeView(DirectoryInfo dirInfo, TreeNode treeNode){
+        private void PopulateRacistTreeView(DirectoryInfo dirInfo, TreeNode treeNode, params string[] races){
             foreach (DirectoryInfo directory in dirInfo.GetDirectories()){
                 TreeNode directoryNode = new TreeNode{
                     Text = directory.Name,
@@ -84,7 +94,7 @@ namespace Diyagram_Yönetim_Sistemi
 
                 //Get all files in the Directory.
                 foreach (FileInfo file in directory.GetFiles()){
-                    if(file.Extension == ".drawio"){
+                    if(races.Contains(file.Extension)){
                         TreeNode fileNode = new TreeNode{
                             Text = file.Name,
                             Value = file.FullName
@@ -92,18 +102,36 @@ namespace Diyagram_Yönetim_Sistemi
                         directoryNode.ChildNodes.Add(fileNode);
                     }
                 }
-                PopulateRacistTreeView(directory, directoryNode);
+                PopulateRacistTreeView(directory, directoryNode, races);
             }
             TreeView.CollapseAll();
         }
 
         protected void TreeView_SelectedNodeChanged(object sender, EventArgs e)
         {
+            if (TreeView.SelectedNode.Value.GetLast(6) == ".dygrm") //TreeView.SelectedNode.Value.Substring(TreeView.SelectedNode.Value.Length - 6)
+            {
+                xml = inflateDecodeBase64StringData(File.ReadAllText(TreeView.SelectedNode.Value));
+                this.Page.ClientScript.RegisterStartupScript(this.GetType(), "printGraph", "app.add_init(printGraph())", true);
+                return;
+            }
             printGraph(TreeView.SelectedNode.Value);
             this.Page.ClientScript.RegisterStartupScript(this.GetType(), "printGraph", "app.add_init(printGraph())", true);
         }
 
-
+        private string inflateDecodeBase64StringData(string data)
+        {
+            byte[] outBuffer = new byte[0x100000];   // need an estimate here
+            int length;
+            using (MemoryStream resultStream = new MemoryStream(Convert.FromBase64String(data)))
+            {
+                using (DeflateStream compressionStream = new DeflateStream(resultStream, CompressionMode.Decompress))
+                {
+                    length = compressionStream.Read(outBuffer, 0, outBuffer.Length);
+                }
+            }
+            return HttpUtility.UrlDecode(Encoding.UTF8.GetString(outBuffer, 0, length));
+        }
 
 
         // Parses the mxGraph XML file format
