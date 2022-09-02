@@ -39,7 +39,7 @@
             </asp:TreeView>
         </div>
 	    <div class="col-lg-9 col-md-8">
-            <div id="graph" class="mx-auto"></div>
+            <div id="graph" class="mx-auto" style="background: url('Scripts/src/images/grid.gif'); overflow: scroll; overflow-y: auto; overflow-x: auto"></div>
 	    </div>
     </div>
     
