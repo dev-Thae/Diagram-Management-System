@@ -49,6 +49,7 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item"><a runat="server" class="nav-link" id="home" href="~/">Ana Sayfa</a></li>
                     <li class="nav-item"><a runat="server" class="nav-link" id="app" href="~/Uygulama.aspx">Uygulama</a></li>
+                    <li class="nav-item"><a runat="server" class="nav-link" id="a1" href="~/UygulamaV2.aspx">UygulamaV2</a></li>
                     <li class="nav-item"><a runat="server" class="nav-link" id="editor" href="~/mxgraph/grapheditor/www/index.html?lang=tr" target="_blank">Editör</a></li>
                     <li class="nav-item"><a runat="server" class="nav-link" id="about" href="~/About">Hakkında</a></li>
                     <li class="nav-item"><a runat="server" class="nav-link" id="contact" href="~/Contact">İletişim</a></li>
