@@ -26,6 +26,8 @@
 	<script type="text/javascript" src="mxgraph/grapheditor/www/js/Toolbar.js"></script>
 	<script type="text/javascript" src="mxgraph/grapheditor/www/js/Dialogs.js"></script>
 
+    <div class="container">
+
     <div class="row">
         <div class="col-lg-3 col-md-4" style="padding-left: 25px">
             <h3>Diagrams Directories</h3>
@@ -41,6 +43,7 @@
 	    <div class="col-lg-9 col-md-8">
             <div id="graph" class="mx-auto" style="background: url('Scripts/src/images/grid.gif'); overflow: scroll; overflow-y: auto; overflow-x: auto"></div>
 	    </div>
+    </div>
     </div>
     
 	<script type="text/javascript">

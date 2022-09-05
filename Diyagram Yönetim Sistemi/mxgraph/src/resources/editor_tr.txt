@@ -1,0 +1,5 @@
+﻿askZoom=Yakınlaştır (%)
+properties=Özellikler
+outline=Taslak
+tasks=Görevler
+help=Yardım

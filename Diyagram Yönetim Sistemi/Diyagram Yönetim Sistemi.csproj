@@ -827,9 +827,11 @@
     <Content Include="mxgraph\src\js\view\mxTemporaryCellStates.js" />
     <Content Include="mxgraph\src\resources\editor.txt" />
     <Content Include="mxgraph\src\resources\editor_de.txt" />
+    <Content Include="mxgraph\src\resources\editor_tr.txt" />
     <Content Include="mxgraph\src\resources\editor_zh.txt" />
     <Content Include="mxgraph\src\resources\graph.txt" />
     <Content Include="mxgraph\src\resources\graph_de.txt" />
+    <Content Include="mxgraph\src\resources\graph_tr.txt" />
     <Content Include="mxgraph\src\resources\graph_zh.txt" />
     <Content Include="old codes.txt" />
     <Content Include="Scripts\bootstrap.bundle.js" />

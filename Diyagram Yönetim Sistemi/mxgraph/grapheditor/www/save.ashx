@@ -15,6 +15,7 @@ public class Save : IHttpHandler
         context.Response.ContentType = "text/plain";
         string xml = HttpUtility.UrlDecode(context.Request.Params["xml"]);
 
+        /*
         if (xml != null && xml.Length > 0)
         {
             context.Response.Write("Request received: " + xml);
@@ -23,6 +24,9 @@ public class Save : IHttpHandler
         {
             context.Response.Write("Empty or missing request parameter.");
         }
+        */
+
+        //context.Response.Write("/Diagrams" + " dizinine başarıyla kaydedildi!");
 
         string filename = context.Request.Params["filename"];
         string doc = Convert.ToBase64String(
@@ -35,6 +39,10 @@ public class Save : IHttpHandler
 
         saveFileOnServer(filename, doc, context);
 
+        //Close page here
+        // the code blow doesn't work because of the pre tag in the html
+        string closeWindow = @"<html><head></head><body><script>window.open('', '_self', ''); window.close();</script></body></html>";
+        context.Response.Write(closeWindow);
     }
 
     public bool IsReusable

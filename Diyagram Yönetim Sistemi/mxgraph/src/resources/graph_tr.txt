@@ -1,0 +1,11 @@
+﻿alreadyConnected=Düğümler zaten bağlı
+containsValidationErrors=Doğrulama hataları içeriyor
+updatingDocument=Döküman güncelleniyor. Lütfen bekleyiniz...
+updatingSelection=Seçim güncelleniyor. Lütfen bekleyiniz...
+collapse-expand=Daralt/Genişlet
+doubleClickOrientation=Yönünü değiştirmek için çift tıkla
+close=Kapat
+error=Hata
+done=Tamam
+cancel=İptal
+ok=OK

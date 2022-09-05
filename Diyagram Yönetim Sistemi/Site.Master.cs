@@ -23,6 +23,9 @@ namespace Diyagram_Yönetim_Sistemi
                 case "Uygulama":
                     app.Attributes.Add("class", app.Attributes["class"] + " active");
                     break;
+                case "UygulamaV2":
+                    app2.Attributes.Add("class", app.Attributes["class"] + " active");
+                    break;
                 case "Hakkında":
                     about.Attributes.Add("class", about.Attributes["class"] + " active");
                     break;

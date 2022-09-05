@@ -7,8 +7,7 @@
             Ergazi, Fatih Sultan Mehmet Bulvarı<br />
             1817. Sokak 448/B, 06370 <br />
             Yenimahalle/Ankara<br />
-            <abbr title="Phone">P:</abbr>
-            (0312) 293 20 00
+            <abbr title="Telefon">Tel:</abbr>   <a href="tel:00000000000">(0000) 000 00 00</a>
         </address>
 
         <address>
