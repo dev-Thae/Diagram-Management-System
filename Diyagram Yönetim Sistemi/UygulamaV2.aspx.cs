@@ -20,12 +20,16 @@ namespace Diyagram_Yönetim_Sistemi
         protected string xml { get; set; }
         protected DrawioFile drawioFile = DrawioFile.Instance;
         protected string filePath;
+        protected bool isFirst = true;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!this.IsPostBack){
                 DirectoryInfo rootInfo = new DirectoryInfo(@"D:\workspaces\github\Diagram-Management-System\Diyagram Yönetim Sistemi\Diagrams\");
                 this.PopulateRacistTreeView(rootInfo, null, ".drawio", ".dygrm");
+            }
+            else{
+                TreeView_SelectedNodeChanged(sender, e);
             }
         }
 

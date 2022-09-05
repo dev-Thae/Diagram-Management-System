@@ -29,7 +29,7 @@
     <div class="container">
 
     <div class="row">
-        <div class="col-lg-3 col-md-4" style="padding-left: 25px">
+        <div class="col-lg-3 col-md-4" style="padding-left: 25px; overflow: auto; background-color: aliceblue;">
             <h3>Diagrams Directories</h3>
             <hr />
             <asp:TreeView ID="TreeView" runat="server" ImageSet="WindowsHelp" OnSelectedNodeChanged="TreeView_SelectedNodeChanged">
