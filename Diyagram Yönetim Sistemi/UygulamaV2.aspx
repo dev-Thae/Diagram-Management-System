@@ -1,30 +1,35 @@
 ﻿<%@ Page Title="UygulamaV2" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UygulamaV2.aspx.cs" Inherits="Diyagram_Yönetim_Sistemi.UygulamaV2" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-	<script type="text/javascript">mxBasePath = '/Scripts/src/';</script>
-	<script type="text/javascript" src="Scripts/src/js/mxClient.js"></script>
-    <script type="text/javascript" src="mxgraph/grapheditor/www/sanitizer/sanitizer.min.js"></script>
-    <script type="text/javascript" src="mxgraph/src/js/mxClient.js"></script>
-    <script type="text/javascript" src="mxgraph/grapheditor/www/js/Graph.js"></script>
-    <script type="text/javascript" src="mxgraph/grapheditor/www/js/Shapes.js"></script>
 
-    
-	<script type="text/javascript" src="mxgraph/grapheditor/www/js/Init.js"></script>
+    <!-- Graph's frontend -->
+	<script type="text/javascript" src="mxgraph/mxClient.js"></script>
+	<script type="text/javascript" src="mxgraph/grapheditor/www/js/Init.js">
+        window.STENCIL_PATH = window.STENCIL_PATH || 'mxgraph/grapheditor/www/stencils';
+	</script>
+	<script type="text/javascript" src="mxgraph/grapheditor/www/js/Graph.js"></script>
+	<script type="text/javascript" src="mxgraph/grapheditor/www/js/Shapes.js"></script>
+    <script type="text/javascript" src="mxgraph/grapheditor/www/sanitizer/sanitizer.min.js"></script>
 	<script type="text/javascript" src="mxgraph/grapheditor/www/deflate/pako.min.js"></script>
 	<script type="text/javascript" src="mxgraph/grapheditor/www/deflate/base64.js"></script>
-	<script type="text/javascript" src="mxgraph/grapheditor/www/jscolor/jscolor.js"></script>
-	<script type="text/javascript" src="mxgraph/grapheditor/www/sanitizer/sanitizer.min.js"></script>
-	<script type="text/javascript" src="mxgraph/grapheditor/www/../../mxClient.js"></script>
+
+	<!--
+	<script type="text/javascript">mxBasePath = '/Scripts/src/';</script>
+	<script type="text/javascript" src="Scripts/src/js/mxClient.js"></script>
+    <script type="text/javascript" src="mxgraph/src/js/mxClient.js"></script>
+
+    <script type="text/javascript" src="mxgraph/grapheditor/www/js/Actions.js"></script>
+	<script type="text/javascript" src="mxgraph/grapheditor/www/js/Dialogs.js"></script>
 	<script type="text/javascript" src="mxgraph/grapheditor/www/js/EditorUi.js"></script>
 	<script type="text/javascript" src="mxgraph/grapheditor/www/js/Editor.js"></script>
 	<script type="text/javascript" src="mxgraph/grapheditor/www/js/Sidebar.js"></script>
-	<script type="text/javascript" src="mxgraph/grapheditor/www/js/Graph.js"></script>
-	<script type="text/javascript" src="mxgraph/grapheditor/www/js/Format.js"></script>
-	<script type="text/javascript" src="mxgraph/grapheditor/www/js/Shapes.js"></script>
-	<script type="text/javascript" src="mxgraph/grapheditor/www/js/Actions.js"></script>
+	<script type="text/javascript" src="mxgraph/grapheditor/www/sanitizer/sanitizer.min.js"></script>
+	<script type="text/javascript" src="mxgraph/grapheditor/www/jscolor/jscolor.js"></script>
 	<script type="text/javascript" src="mxgraph/grapheditor/www/js/Menus.js"></script>
 	<script type="text/javascript" src="mxgraph/grapheditor/www/js/Toolbar.js"></script>
-	<script type="text/javascript" src="mxgraph/grapheditor/www/js/Dialogs.js"></script>
+	<script type="text/javascript" src="mxgraph/grapheditor/www/js/Format.js"></script>
+    -->
+
 
     <div class="container">
 
